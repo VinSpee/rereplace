@@ -1,6 +1,6 @@
 {
   "name": "rereplace",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "replace regex in one file with the contents of another file",
   "main": "lib/index.js",
   "bin": "lib/cli.js",
