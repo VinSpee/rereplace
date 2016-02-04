@@ -5,52 +5,55 @@ const createRegexFromString = (str) => {
 	if (regParts) {
 		regexp = new RegExp(regParts[1], regParts[2]);
 	} else {
-		regexp = new RegExp(inputString);
+		regexp = new RegExp(str);
 	}
 	return regexp;
 };
 
-const getOutputFile = file => {
+const getFile = file => {
 	if (fs.exists(file) !== 'file') {
-		throw new TypeError(`Output file doesn't exist`);
-	} else {
-		return fs.read(file);
+		throw new Error(`Output file doesn't exist`);
 	}
+	return fs.read(file);
 };
 
 const getModifiedOutput = (pattern, modifier, output) => {
 	const tokenToReplace = pattern.exec(output)[1];
 	if (!tokenToReplace) {
 		throw new Error('The pattern was not found in the file.');
-	} else {
-		return output.replace(tokenToReplace, modifier)
 	}
+	return output.replace(tokenToReplace, modifier);
 };
 
-const rereplace = input => {
+const rereplace = (input = []) => {
+	let inFile;
+	let outFile;
+	if (!input || input.length !== 3) {
+		return '';
+	}
 	try {
-		getOutputFile(input[2]);
+		inFile = getFile(input[1]);
+		outFile = getFile(input[2]);
 	} catch (e) {
-		console.log(e);
-		process.exit(1);
+		return e;
 	}
 
 	const params = {
 		pattern: createRegexFromString(input[0]),
-		input: fs.read(input[1]),
-		output: fs.read(input[2]),
+		input: inFile,
+		output: outFile,
 	};
 
 	let modifiedOutput;
 	try {
 		modifiedOutput = getModifiedOutput(params.pattern, params.input, params.output);
 	} catch (e) {
-		console.log(e);
-		console.exit(1);
+		throw e;
 	}
 	fs.write(input[2], modifiedOutput, { atomic: true });
+	console.log(modifiedOutput);
 	console.log(`injected ${input[1]} to ${input[2]}`);
-	process.exit(0);
+	return modifiedOutput;
 };
 
 export default rereplace;
