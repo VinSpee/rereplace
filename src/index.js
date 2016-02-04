@@ -51,7 +51,6 @@ const rereplace = (input = []) => {
 		throw e;
 	}
 	fs.write(input[2], modifiedOutput, { atomic: true });
-	console.log(modifiedOutput);
 	console.log(`injected ${input[1]} to ${input[2]}`);
 	return modifiedOutput;
 };
