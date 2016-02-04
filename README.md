@@ -1,3 +1,5 @@
+![Travis](https://img.shields.io/travis/VinSpee/rereplace.svg)
+
 # rereplace
 
 rereplace simply takes a regex with a capture group, reads a file, and replaces
