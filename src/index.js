@@ -25,7 +25,7 @@ const getModifiedOutput = (pattern, modifier, output) => {
 	return output.replace(tokenToReplace, modifier);
 };
 
-const rereplace = (input = [], { silent = false }) => {
+const rereplace = (input = [], flags) => {
 	let inFile;
 	let outFile;
 	if (!input || input.length !== 3) {
@@ -51,7 +51,7 @@ const rereplace = (input = [], { silent = false }) => {
 		throw e;
 	}
 	fs.write(input[2], modifiedOutput, { atomic: true });
-	if (silent) {
+	if (flags && flags.silent) {
 		console.log(`injected ${input[1]} to ${input[2]}`);
 	}
 	return modifiedOutput;
