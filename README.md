@@ -1,4 +1,4 @@
-[![Travis](https://img.shields.io/travis/VinSpee/rereplace.svg)](https://travis-ci.org/VinSpee/rereplace)]
+[![Travis](https://img.shields.io/travis/VinSpee/rereplace.svg)](https://travis-ci.org/VinSpee/rereplace)
 [![Test Coverage](https://codeclimate.com/github/VinSpee/rereplace/badges/coverage.svg)](https://codeclimate.com/github/VinSpee/rereplace/coverage)
 [![Code Climate](https://codeclimate.com/github/VinSpee/rereplace/badges/gpa.svg)](https://codeclimate.com/github/VinSpee/rereplace)
 
