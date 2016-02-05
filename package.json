@@ -7,8 +7,11 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "babel-tape-runner src/**/__tests__/*-test.js | tap-spec",
+    "posttest": "npm run test:coverage",
+    "istanbul": "^0.4.2",
     "lint": "eslint src/**/*.js",
     "test:watch": " chokidar 'src/**/*.js' -c 'clear && npm run -s test'",
+    "test:coverage": "babel-node node_modules/.bin/isparta cover --report text --report html ./src/__tests__/*-test.js",
     "build": "babel src --out-dir lib",
     "watch": "babel src --out-dir lib --watch",
     "prepublish": "npm run build",
@@ -39,6 +42,7 @@
     "chokidar-cli": "^1.2.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
+    "isparta": "^4.0.0",
     "npm-run-all": "^1.5.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.4.0"
