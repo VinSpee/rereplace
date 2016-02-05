@@ -3,7 +3,9 @@
   "parser": "babel-eslint",
   "globals": {},
   "rules": {
+
     "indent": [2, 2, {"SwitchCase": 1}],
+    "no-console": [0],
     "no-shadow": [2, {"allow": ["fields"]}],
     "no-extra-semi": [0],
     "indent": [2, "tab"],
