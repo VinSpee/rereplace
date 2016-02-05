@@ -11,7 +11,7 @@
     "istanbul": "^0.4.2",
     "lint": "eslint src/**/*.js",
     "test:watch": " chokidar 'src/**/*.js' -c 'clear && npm run -s test'",
-    "test:coverage": "babel-node node_modules/.bin/isparta cover --report text --report html ./src/__tests__/*-test.js",
+    "test:coverage": "babel-node node_modules/.bin/isparta cover --report text --report lcov ./src/__tests__/*-test.js",
     "build": "babel src --out-dir lib",
     "watch": "babel src --out-dir lib --watch",
     "prepublish": "npm run build",
