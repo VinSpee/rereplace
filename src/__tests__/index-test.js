@@ -7,7 +7,7 @@ test('rereplace', t => {
 		const expected = 'function';
 		const actual = typeof rereplace;
 		assert.equal(actual, expected,
-			`it's a function`
+			'it\'s a function'
 		);
 		assert.end();
 	});
@@ -15,7 +15,7 @@ test('rereplace', t => {
 		const expected = 'string';
 		const actual = typeof rereplace();
 		assert.equal(actual, expected,
-			`given no arguments, returns an empty string`
+			'given no arguments, returns an empty string'
 		);
 		assert.end();
 	});
@@ -23,12 +23,12 @@ test('rereplace', t => {
 		const oneexpected = '';
 		const oneactual = rereplace('/dude/');
 		assert.equal(oneactual, oneexpected,
-			`given 1 argument, returns an empty string`
+			'given 1 argument, returns an empty string'
 		);
 		const twoexpected = '';
 		const twoactual = rereplace('/dude/', 'foo');
 		assert.equal(twoactual, twoexpected,
-			`given 2 arguments, returns an empty string`
+			'given 2 arguments, returns an empty string'
 		);
 		assert.end();
 	});
@@ -36,17 +36,17 @@ test('rereplace', t => {
 		const oneexpected = '';
 		const oneactual = rereplace([]);
 		assert.equal(oneactual, oneexpected,
-			`given an empty array, returns an empty string`
+			'given an empty array, returns an empty string'
 		);
 		const twoexpected = '';
 		const twoactual = rereplace(['/dude/']);
 		assert.equal(twoactual, twoexpected,
-			`given 1 array argument, returns an empty string`
+			'given 1 array argument, returns an empty string'
 		);
 		const threeexpected = '';
 		const threeactual = rereplace(['/dude/', 'foo']);
 		assert.equal(threeactual, threeexpected,
-			`given 2 array argument, returns an empty string`
+			'given 2 array argument, returns an empty string'
 		);
 		assert.end();
 	});
@@ -86,7 +86,7 @@ test('rereplace', t => {
 		const expected = 'dudebar\ndude\n';
 		const actual = fs.read('./src/__tests__/dudefoodude');
 		assert.equal(actual, expected,
-			`Injects one file into another over a pattern`
+			'Injects one file into another over a pattern'
 		);
 		assert.end();
 	});
