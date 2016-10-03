@@ -45,7 +45,7 @@
     "babel-preset-es2015-node5": "^1.1.2",
     "babel-tape-runner": "^2.0.0",
     "chokidar-cli": "^1.2.0",
-    "codeclimate-test-reporter": "^0.3.1",
+    "codeclimate-test-reporter": "^0.4.0",
     "eslint": "^3.0.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "1.8.1",
